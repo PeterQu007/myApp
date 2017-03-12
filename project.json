@@ -61,12 +61,23 @@
 
   "publishOptions": {
     "include": [
-      "Views"
+      "ServerSide/Views",
+      "ServerSide/**/*.cshtml",
+      "wwwroot"
     ],
     "includeFiles": [
-      "appsettings.json",
-      "appsettings.Production.json",
-      "web.config"
+      "ServerSide/appsettings.json",
+      "ServerSide/appsettings.Production.json",
+      "ServerSide/web.config"
+    ],
+     "mappings": {
+      "ServerSide": "./**/*",
+    }
+  },
+
+  "scripts": {
+    "prebuild": [
+      "node run build"
     ]
   }
 }
